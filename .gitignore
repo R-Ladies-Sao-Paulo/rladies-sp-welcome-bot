@@ -39,5 +39,7 @@ vignettes/*.pdf
 .Renviron
 
 # Bot token
-bot_token.R
+token.R
+
+# packrat
 packrat/lib*/
