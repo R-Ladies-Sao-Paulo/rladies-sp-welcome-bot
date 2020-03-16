@@ -7,12 +7,29 @@ updater <- Updater(token = bot_token("RLadiesSP"))
 updates <- bot$getUpdates()
 
 
+# defines welcome message -------------------------------------------------
+welcome_text <- "*R-Ladies é uma organização que promove a diversidade de gênero na comunidade da linguagem R.* R-Ladies São Paulo integra a organização R-Ladies Global, em São Paulo.
+
+Nosso principal objetivo é *promover a linguagem computacional estatística R compartilhando conhecimento, assim, qualquer pessoa com interesse na linguagem é bem-vinda*, independente do nível de conhecimento 🥰
+
+Nosso **público-alvo são as minorias de gênero**, portanto, mulheres cis, mulheres trans, bem como pessoas não-binárias e queer.
+
+Buscamos fazer deste espaço um lugar seguro de aprendizado, então, sinta-se livre para fazer perguntas e saiba que não toleramos nenhuma forma de assédio.
+
+• *Já faz parte da nossa comunidade no Meetup?* Se não fizer, *entra aqui: https://bit.ly/RLadiesSP*.
+
+• Saiba, também, que estamos *rodando um censo para traçar o perfil da nossa comunidade* e entender o que as nossas ladies esperam da gente. *Para responder, só clicar aqui: http://bit.ly/rladies_sp_censo2020.*
+
+Obrigada! 💖"
+
 # sends welcome message ---------------------------------------------------
 welcome <- function(bot, update){
+  welcome_message <- paste0('Seja bem-vinde, ', update$message$new_chat_participant$first_name,
+                            ' (@', update$message$new_chat_participant$username,')! \n\n', welcome_text)
+  
   if (length(update$message$new_chat_participant) > 0L) {
-    bot$sendMessage(chat_id = update$message$chat_id,
-                    text = paste0('Seja bem-vinda(o), ', update$message$new_chat_participant$first_name,
-                                  ' (@', update$message$new_chat_participant$username,')!'))
+    bot$sendMessage(chat_id = update$message$chat_id, text = welcome_message,
+                    disable_web_page_preview = T, parse_mode="Markdown")
   }
 }
 
@@ -38,7 +55,7 @@ updater$start_polling()
 # welcome command ---------------------------------------------------------
 # welcome_message <- function(bot, update){
 #   bot$sendMessage(chat_id = update$message$chat_id,
-#                   text = paste0('"', update$message$text, '" saved as welcome message!'))
+#                   text = paste0('update$message$text, ' saved as welcome message!'))
 # }
 # 
 # updater <- updater + CommandHandler("welcome", welcome_message,
