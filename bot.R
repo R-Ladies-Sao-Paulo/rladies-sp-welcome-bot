@@ -6,6 +6,18 @@ bot <- Bot(token = bot_token("RLadiesSP"))
 updater <- Updater(token = bot_token("RLadiesSP"))
 updates <- bot$getUpdates()
 
+# creates command to kill bot ---------------------------------------------
+kill <- function(bot, update){
+  bot$sendMessage(chat_id = update$message$chat_id,
+                  text = "Parando por aqui...")
+  # Clean 'kill' update
+  bot$getUpdates(offset = update$update_id + 1L)
+  # Stop the updater polling
+  updater$stop_polling()
+}
+
+updater <<- updater + CommandHandler("kill", kill,
+                                     as.BaseFilter(function(message) message$from_user  == "15366329"))
 
 # defines welcome message -------------------------------------------------
 welcome_text <- "*R-Ladies é uma organização que promove a diversidade de gênero na comunidade da linguagem R.* R-Ladies São Paulo integra a organização R-Ladies Global, em São Paulo.
@@ -24,8 +36,9 @@ Obrigada! 💖"
 
 # sends welcome message ---------------------------------------------------
 welcome <- function(bot, update){
+  escape_username <- str_replace_all(update$message$new_chat_participant$username, c("\\*"="\\\\*", "_"="\\\\_"))
   welcome_message <- paste0('Seja bem-vinde, ', update$message$new_chat_participant$first_name,
-                            ' (@', update$message$new_chat_participant$username,')! \n\n', welcome_text)
+                            ' (@', escape_username,')! \n\n', welcome_text)
   
   if (length(update$message$new_chat_participant) > 0L) {
     bot$sendMessage(chat_id = update$message$chat_id, text = welcome_message,
@@ -36,23 +49,10 @@ welcome <- function(bot, update){
 updater <- updater + MessageHandler(welcome, MessageFilters$all)
 
 
-# creates command to kill bot ---------------------------------------------
-kill <- function(bot, update){
-  bot$sendMessage(chat_id = update$message$chat_id,
-                  text = "Parando por aqui...")
-  # Clean 'kill' update
-  bot$getUpdates(offset = update$update_id + 1L)
-  # Stop the updater polling
-  updater$stop_polling()
-}
-
-updater <<- updater + CommandHandler("kill", kill,
-                                     as.BaseFilter(function(message) message$from_user  == "15366329"))
-
-# starts bot --------------------------------------------------------------
+#starts bot --------------------------------------------------------------
 updater$start_polling()
 
-# welcome command ---------------------------------------------------------
+cawelcome command ---------------------------------------------------------
 # welcome_message <- function(bot, update){
 #   bot$sendMessage(chat_id = update$message$chat_id,
 #                   text = paste0('update$message$text, ' saved as welcome message!'))
