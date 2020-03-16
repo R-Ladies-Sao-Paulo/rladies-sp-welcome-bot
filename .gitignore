@@ -40,3 +40,4 @@ vignettes/*.pdf
 
 # Bot token
 bot_token.R
+packrat/lib*/

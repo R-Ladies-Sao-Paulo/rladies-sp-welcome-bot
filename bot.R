@@ -1,4 +1,5 @@
 library(telegram.bot)
+library(stringr)
 source('bot_token.R') # bot token (hidden with .gitignore)
 
 # saves bot token and updaters --------------------------------------------
