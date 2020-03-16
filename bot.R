@@ -1,6 +1,6 @@
 library(telegram.bot)
 library(stringr)
-source('bot_token.R') # bot token (hidden with .gitignore)
+source('token.R') # bot token (hidden with .gitignore)
 
 # saves bot token and updaters --------------------------------------------
 bot <- Bot(token = bot_token("RLadiesSP"))
@@ -21,7 +21,7 @@ updater <<- updater + CommandHandler("kill", kill,
                                      as.BaseFilter(function(message) message$from_user  == "15366329"))
 
 # defines welcome message -------------------------------------------------
-welcome_text <- "*R-Ladies é uma organização que promove a diversidade de gênero na comunidade da linguagem R.* R-Ladies São Paulo integra a organização R-Ladies Global, em São Paulo.
+welcome_text <- "*R-Ladies é uma organização que promove a diversidade de gênero na comunidade da linguagem R.* Integramos a organização R-Ladies Global, em São Paulo.
 
 Nosso principal objetivo é *promover a linguagem computacional estatística R compartilhando conhecimento, assim, qualquer pessoa com interesse na linguagem é bem-vinde*, independente do nível de conhecimento 🥰
 
@@ -51,12 +51,3 @@ updater <- updater + MessageHandler(welcome, MessageFilters$all)
 
 # starts bot --------------------------------------------------------------
 updater$start_polling()
-
-# welcome command ---------------------------------------------------------
-# welcome_message <- function(bot, update){
-#   bot$sendMessage(chat_id = update$message$chat_id,
-#                   text = paste0('update$message$text, ' saved as welcome message!'))
-# }
-# 
-# updater <- updater + CommandHandler("welcome", welcome_message,
-#                                     as.BaseFilter(function(message) message$from_user  == "15366329"))
