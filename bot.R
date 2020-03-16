@@ -1,6 +1,6 @@
 library(telegram.bot)
 library(stringr)
-source('token.R') # bot token (hidden with .gitignore)
+try(source('token.R'), silent=T) # bot token (hidden with .gitignore)
 
 # saves bot token and updaters --------------------------------------------
 bot <- Bot(token = bot_token("RLadiesSP"))
