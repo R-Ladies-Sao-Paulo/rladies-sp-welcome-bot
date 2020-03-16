@@ -1,1 +1,0 @@
-Sys.setenv(R_TELEGRAM_BOT_RLadiesSP='1083651007:AAGSeppPxTarRJrmRent1JgUktbpdMj83Rg')
