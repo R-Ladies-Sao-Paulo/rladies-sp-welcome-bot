@@ -25,7 +25,7 @@ welcome_text <- "*R-Ladies é uma organização que promove a diversidade de gê
 
 Nosso principal objetivo é *promover a linguagem computacional estatística R compartilhando conhecimento, assim, qualquer pessoa com interesse na linguagem é bem-vinde*, independente do nível de conhecimento 🥰
 
-Nosso **público-alvo são as minorias de gênero**, portanto, mulheres cis, mulheres trans, bem como pessoas não-binárias e queer.
+Nosso **público-alvo são as minorias de gênero**, portanto, mulheres cis ou trans, homens trans, bem como pessoas não-binárias e queer.
 
 Buscamos fazer deste espaço um lugar seguro de aprendizado, então, sinta-se livre para fazer perguntas e saiba que não toleramos nenhuma forma de assédio.
 
