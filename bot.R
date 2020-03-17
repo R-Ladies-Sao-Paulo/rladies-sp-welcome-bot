@@ -29,7 +29,7 @@ Nosso **público-alvo são as minorias de gênero**, portanto, mulheres cis, mul
 
 Buscamos fazer deste espaço um lugar seguro de aprendizado, então, sinta-se livre para fazer perguntas e saiba que não toleramos nenhuma forma de assédio.
 
-• *Já faz parte da nossa comunidade no Meetup?* Se não fizer, *entra aqui: https://bit.ly/RLadiesSP*.
+• *Já faz parte da nossa comunidade no Meetup?* Nela, você fica sabendo em primeira mão dos nossos eventos. *Se ainda não fizer, entra aqui: https://bit.ly/RLadiesSP*.
 
 • Saiba, também, que estamos *rodando um censo para traçar o perfil da nossa comunidade* e entender o que as nossas ladies esperam da gente. *Para responder, só clicar aqui: http://bit.ly/rladies_sp_censo2020.*
 
