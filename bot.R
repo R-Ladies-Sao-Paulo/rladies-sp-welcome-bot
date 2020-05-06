@@ -31,8 +31,6 @@ Buscamos fazer deste espaço um lugar seguro de aprendizado, então, sinta-se li
 
 • *Já faz parte da nossa comunidade no Meetup?* Nela, você fica sabendo em primeira mão dos nossos eventos. *Se ainda não fizer, entra aqui: https://bit.ly/RLadiesSP*.
 
-• Saiba, também, que estamos *rodando um censo para traçar o perfil da nossa comunidade* e entender o que as nossas ladies esperam da gente. *Para responder, só clicar aqui: http://bit.ly/rladies_sp_censo2020.*
-
 Obrigada! 💖"
 
 # sends welcome message ---------------------------------------------------
